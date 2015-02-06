@@ -25,6 +25,7 @@ void setup() {
 
   String lines[] = loadStrings("data/zoo.data");
   for (int i = 0; i<lines.length; i++) {
+    String[] name = split(lines[i], ',');
     int[] list = int(split(lines[i], ','));
     TableRow newRow = newtable.addRow();
     for (int x = 1, y = 0; x < 13; x++, y++) {
@@ -43,7 +44,7 @@ void setup() {
         values[v] = false;
       }
     }
-    newRow.setString("animalname", str(list[0]));
+    newRow.setString("animalname", name[0]);
     newRow.setString("hair", str(values[0]));
     newRow.setString("feathers", str(values[1]));
     newRow.setString("eggs", str(values[2]));
